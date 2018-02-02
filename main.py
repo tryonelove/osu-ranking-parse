@@ -52,7 +52,7 @@ pp_parse()
 x = [float(a) for a in pps]
 y = [int(b) for b in ss]
 plt.scatter(x, y, s=20)
-plt.title("Зависимость ss от pp")
-plt.xlabel("PP")
-plt.ylabel("SS")
+plt.title("f(x)")
+plt.xlabel("X")
+plt.ylabel("Y")
 plt.show()
