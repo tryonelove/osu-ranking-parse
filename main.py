@@ -11,7 +11,7 @@ class Parse:
     def __init__(self, number_of_pages, country):
         self.number_of_pages = number_of_pages 
         self.country = country
-        self.url = 'https://osu.ppy.sh/rankings/osu/performance?country={}&page={}'.format(country, self.number_of_pages)
+        self.url = 'https://osu.ppy.sh/rankings/osu/performance?country={}&page='.format(country)
 
     def get_html(self, url):
         r = requests.get(self.url).text
@@ -54,16 +54,17 @@ class Parse:
             print("Page "+str(i)+" of "+str(self.number_of_pages)+" for SS")
 
 
+
 def main():
-    parse = Parse(5, 'RU')
+    parse = Parse(5, '')
     parse.pp()
     parse.playcount()
     x = [int(a) for a in playcounts]
     y = [int(b) for b in pps]
     plt.scatter(x, y, s=20)
-    plt.title("f(x) = pp(pc)")
-    plt.xlabel("PP")
-    plt.ylabel('PC')
+    plt.title("PP(PC) OVERALL")
+    plt.xlabel("PC")
+    plt.ylabel('PP')
     plt.show()
 
 if __name__ == '__main__':
