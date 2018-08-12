@@ -56,7 +56,7 @@ class Parse:
 
 
 def main():
-    parse = Parse(5, '')
+    parse = Parse(5, 'COUNTRY_ ABBREVIATION')
     parse.pp()
     parse.playcount()
     x = [int(a) for a in playcounts]
